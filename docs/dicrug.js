@@ -537,6 +537,7 @@ async function exit()
 
 async function gubs()
 {
+	return;
 	try
 	{
 		farm_1_f_chappro();
