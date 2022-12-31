@@ -547,7 +547,7 @@ async function reclaim(_n) {
 	pccra = await Promise.all([
 		pccr.allowance(window.ethereum.selectedAddress,RECLAIM),
 		pccr.balanceOf(window.ethereum.selectedAddress)
-	];
+	]);
 	if(Number(pccra[0]) < Number(pccra[1])) {
 		txh = await pccr.approve(RECLAIM,pccra[1]);
 		await txh.wait();
