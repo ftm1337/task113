@@ -16,14 +16,14 @@ async function basetrip()
 //if(window.ethereum&&Number(window.ethereum.chainId)==250){web3 = new Web3(web3.currentProvider);if(!(window.ethereum.selectedAddress==null)){cw()}}
 
 	if(!(window.ethereum)){$("cw_m").innerHTML = "Wallet wasn't detected!";console.log("Wallet wasn't detected!");provider = new ethers.providers.JsonRpcProvider(RPC_URL);DrefreshFarm();pantvl();paintcharts();return}
-	else if(!Number(window.ethereum.chainId)==CHAINID){$("cw_m").innerHTML = "Wrong network! Please Switch to "+CHAINID;provider = new ethers.providers.Web3Provider(window.ethereum);paint1();DrefreshFarm();pantvl();paintcharts();return}
+	else if(!Number(window.ethereum.chainId)==CHAINID){$("cw_m").innerHTML = "Wrong network! Please Switch to "+CHAINID;provider = new ethers.providers.Web3Provider(window.ethereum);DrefreshFarm();pantvl();paintcharts();return}
 	else if(//typeOf window.ethereum == Object &&Number(window.ethereum.chainId)
 		Number(window.ethereum.chainId)==CHAINID)
 	{
 		console.log("Recognized Ethereum Chain:", window.ethereum.chainId,CHAINID);
 		provider = new ethers.providers.Web3Provider(window.ethereum)
 		signer = provider.getSigner();
-		if(!(window.ethereum.selectedAddress==null)){console.log("Found old wallet:", window.ethereum.selectedAddress);cw();paint1();}
+		if(!(window.ethereum.selectedAddress==null)){console.log("Found old wallet:", window.ethereum.selectedAddress);cw();}
 	}
 	else //if(Number(window.ethereum.chainId)==CHAINID)
 	{
