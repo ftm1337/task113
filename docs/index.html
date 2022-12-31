@@ -196,7 +196,7 @@ Zero withdrawal fees.
 <hr class="hr1">
 <br><br><br>
 
-<h2>Control Panel</h2>
+<h2>Kontrol Panel</h2>
 
 <div id="connect">
 	Please connect your web3 wallet.
@@ -266,7 +266,21 @@ Dictum Router address is 0xfa3e4050dd383b8df1990831e59a82c350379bd7
 <br>vAMM-DAI/USDT : 0x0aD8B21FB2Ab9C50BF9A564C0479e4f86E7531bA
 
 
-<br><br><br><br>
+
+<br><br>
+<br><br>
+<br><br>
+Ignore below stuff
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+Ignore below stuff
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <div style="display:none">
 <div class="panels">
 	<div class="">
@@ -514,16 +528,19 @@ async function paint1() {
 		pcb = await pcc.balanceOf(window.ethereum.selectedAddress);
 		$("stage1").innerHTML += `
 			<div>
-				<br><br><br><br>
+				<br><br><br>
 				Found ${(pcb/1e18).toFixed(18)} ${AB[i][1]} LPs
-				<br><br>
 			</div>
 
 		`;
 		if(Number(pcb>0)) {
 			$("stage1").innerHTML += `
+				<br>
 				<button onclick='reclaim(i)'>Recover Tokens from LP</button>
 			`;
+		}
+		else {
+			$("stage1").innerHTML += "<br>Nothing to Reclaim!";
 		}
 	}
 }
