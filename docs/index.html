@@ -527,16 +527,13 @@ async function paint1() {
 		pcc = new ethers.Contract(AB[i][0],["function balanceOf(address) public view returns(uint)"],signer);
 		pcb = await pcc.balanceOf(window.ethereum.selectedAddress);
 		$("stage1").innerHTML += `
-			<div>
-				<br><br><br>
-				Found ${(pcb/1e18).toFixed(18)} ${AB[i][1]} LPs
-			</div>
+			<br><br>
+			Found ${(pcb/1e18).toFixed(18)} ${AB[i][1]} LPs
 
 		`;
 		if(Number(pcb>0)) {
 			$("stage1").innerHTML += `
-				<br>
-				<button onclick='reclaim(i)'>Recover Tokens from LP</button>
+				<button onclick='reclaim(${i})'>Recover Tokens from LP</button>
 			`;
 		}
 		else {
