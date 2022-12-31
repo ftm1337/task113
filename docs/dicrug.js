@@ -40,6 +40,7 @@ async function basetrip()
 }
 async function pantvl()
 {
+return;
 	tabi = [{"constant": true,"inputs": [],"name": "tvl","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"}]
 	const tg = new ethers.Contract(tsca,tabi,provider)
 	let r = await tg.tvl()
