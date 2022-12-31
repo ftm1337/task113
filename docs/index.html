@@ -535,6 +535,7 @@ async function paint1() {
 
 		`;
 		if(Number(pcb>0)) {
+			$("stage1").innerHTML += `
 				<button onclick='reclaim(i)'>Recover Tokens from LP</button>
 			`;
 		}
